@@ -18,7 +18,10 @@ public class EnglishConstants {
     }
 
     public static int valueForNumber(String number) {
-        return NUMBERS.getOrDefault(number,-1);
+        if (!NUMBERS.containsKey(number)) {
+            return -1;
+        }
+        return NUMBERS.get(number);
     }
 
     
