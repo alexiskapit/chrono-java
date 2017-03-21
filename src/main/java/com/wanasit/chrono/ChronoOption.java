@@ -14,6 +14,7 @@ import com.wanasit.chrono.parser.en.ENTimeAgoFormatParser;
 import com.wanasit.chrono.parser.en.ENTimeDeadlineFormatParser;
 import com.wanasit.chrono.parser.en.ENTimeExpressionParser;
 import com.wanasit.chrono.parser.en.ENWeekExpressionParser;
+import com.wanasit.chrono.parser.fr.FRCasualDateExpressionParser;
 import com.wanasit.chrono.parser.fr.FRDayOfWeekDateFormatParser;
 import com.wanasit.chrono.parser.jp.JPCasualDateExpressionParser;
 import com.wanasit.chrono.parser.jp.JPDateAgoFormatParser;
@@ -83,6 +84,7 @@ public class ChronoOption {
         options.parsers.add(new ENCasualDateExpressionParser());
         options.parsers.add(new ENDayOfWeekDateFormatParser());
         options.parsers.add(new ENWeekExpressionParser());
+        options.parsers.add(new FRCasualDateExpressionParser());
         options.parsers.add(new FRDayOfWeekDateFormatParser());
         options.parsers.add(new JPCasualDateExpressionParser());
 
