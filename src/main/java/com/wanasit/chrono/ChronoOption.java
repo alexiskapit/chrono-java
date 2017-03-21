@@ -1,16 +1,25 @@
 package com.wanasit.chrono;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.wanasit.chrono.filter.LowProbabilityFormatFilter;
 import com.wanasit.chrono.filter.PrefixCheckFilter;
 import com.wanasit.chrono.parser.Parser;
-import com.wanasit.chrono.parser.en.*;
-import com.wanasit.chrono.parser.jp.*;
+import com.wanasit.chrono.parser.en.ENCasualDateExpressionParser;
+import com.wanasit.chrono.parser.en.ENDayOfWeekDateFormatParser;
+import com.wanasit.chrono.parser.en.ENInternationalStandardParser;
+import com.wanasit.chrono.parser.en.ENMonthNameLittleEndianParser;
+import com.wanasit.chrono.parser.en.ENMonthNameMiddleEndianParser;
+import com.wanasit.chrono.parser.en.ENSlashBigEndianDateFormatParser;
+import com.wanasit.chrono.parser.en.ENSlashDateFormatParser;
+import com.wanasit.chrono.parser.en.ENTimeAgoFormatParser;
+import com.wanasit.chrono.parser.en.ENTimeDeadlineFormatParser;
+import com.wanasit.chrono.parser.en.ENTimeExpressionParser;
+import com.wanasit.chrono.parser.en.ENWeekExpressionParser;
+import com.wanasit.chrono.parser.fr.FRDayOfWeekDateFormatParser;
+import com.wanasit.chrono.parser.jp.JPCasualDateExpressionParser;
+import com.wanasit.chrono.parser.jp.JPDateAgoFormatParser;
+import com.wanasit.chrono.parser.jp.JPDayOfWeekDateFormatParser;
+import com.wanasit.chrono.parser.jp.JPStandartDateFormatParser;
+import com.wanasit.chrono.parser.jp.JPTimeExpressionParser;
 import com.wanasit.chrono.refiner.ExtractConcordanceRefiner;
 import com.wanasit.chrono.refiner.ExtractTimezoneRefiner;
 import com.wanasit.chrono.refiner.Refiner;
@@ -18,6 +27,12 @@ import com.wanasit.chrono.refiner.en.ENMergeDateAndTimeRefiner;
 import com.wanasit.chrono.refiner.en.ENMergeDateRangeRefiner;
 import com.wanasit.chrono.refiner.en.ENMergeWeekdayRefiner;
 import com.wanasit.chrono.refiner.en.ENRemoveOverlapRefiner;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ChronoOption {
 
@@ -68,6 +83,7 @@ public class ChronoOption {
         options.parsers.add(new ENCasualDateExpressionParser());
         options.parsers.add(new ENDayOfWeekDateFormatParser());
         options.parsers.add(new ENWeekExpressionParser());
+        options.parsers.add(new FRDayOfWeekDateFormatParser());
         options.parsers.add(new JPCasualDateExpressionParser());
 
         options.refiners.add(2, new ENMergeWeekdayRefiner());
